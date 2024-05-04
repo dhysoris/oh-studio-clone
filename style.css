@@ -11,7 +11,9 @@
 }
 
 body {
+    /* height: 200vh; */
     /* background: url(https://images.unsplash.com/photo-1711522676532-d6dce8a42335?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); */
+   
 }
 
 nav {
@@ -67,6 +69,8 @@ nav {
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    position: relative;
 }
 
 /* .hero-container {
@@ -82,10 +86,14 @@ nav {
 .hero-container {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    
     /* border-top-style: double;
     border-bottom-style: double; */
     
-    
+
+    position: relative;
+
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -97,15 +105,22 @@ nav {
      /* Center the container horizontally */
 }
 
+
 .main {
     display: flex;
     justify-content: center;
 }
 
 .hero-container h1{
+
+    color: black;
+    background: white;
+    border-radius: 2rem;
+
     font-weight: 400;
     width: 700px;
     font-size: 4.4rem; 
+    transition: .5s;
 }
 
 .hero-flex-group {
@@ -455,4 +470,33 @@ footer {
     50% {background-position: 100% 100%,100% 0,0    0   ,0 100%}
     90%,
     100%{background-position: 100% 100%,0 100%,0    0   ,100% 0}
+}
+
+
+
+/* TODO Javascript hover test */
+
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    transition: 0.1s;
+    /* transform: translate(-50%, -50%); */
+    pointer-events: none;
+    mix-blend-mode: difference;
+    
+}
+
+/* .main h1:hover{
+    color: white;
+} */
+
+/* .hero-flex-group span:nth-child(1) {
+    color: white;
+} */
+
+.main h1:hover ~ .cursor {
+    transform: scale(20);
 }
