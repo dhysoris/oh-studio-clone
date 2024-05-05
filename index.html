@@ -32,7 +32,7 @@
    <div class="hero-description">
         <div class="hero-container">
             <div class="main">
-                <h1>
+                <h1 class="hidden1">
                     A brand and product
                     designer working with
                     clients globally
@@ -40,17 +40,19 @@
                 </h1>
                 <div class="cursor"></div>
             </div>
-            <div class="hero-flex-group">
-                <span>Expertise</span>
-                <span>Branding</span>
-                <span>Product</span>
-                <span>Design System</span>
+            <div class="hero-flex-group ">
+                <div class="test-test hidden1">
+                    <span>Expertise</span>
+                    <span>Branding</span>
+                    <span>Product</span>
+                    <span>Design System</span>
+                </div>
             </div>
         </div>
    </div>
 
-   <main> 
-        <div class="video-container">
+   <main > 
+        <div class="video-container hidden1">
             <div class="video-container-flex-1">
                 <div class="image-container">
                     <div class="glass-hover">
@@ -73,7 +75,7 @@
             </div>
         </div>
 
-        <div class="video-container">
+        <div class="video-container hidden1">
             <div class="video-container-flex-1">
                 <div class="image-container">
                     <div class="glass-hover">
@@ -92,7 +94,7 @@
             </div>
         </div>
 
-        <div class="video-container">
+        <div class="video-container hidden1">
             <div class="video-container-flex-1">
                 <div class="image-container">
                     <div class="glass-hover">
@@ -111,7 +113,7 @@
             </div>
         </div>
 
-        <div class="video-container">
+        <div class="video-container hidden1">
             <div class="video-container-flex-1">
                 <div class="image-container">
                     <div class="glass-hover">
@@ -130,7 +132,7 @@
             </div>
         </div>
 
-        <div class="video-container">
+        <div class="video-container hidden1">
             <div class="video-container-flex-1">
                 <div class="image-container">
                     <div class="glass-hover">
@@ -149,7 +151,7 @@
             </div>
         </div>
 
-        <div class="video-container">
+        <div class="video-container hidden1">
             <div class="video-container-flex-1">
                 <div class="image-container">
                     <div class="glass-hover">
@@ -172,8 +174,8 @@
    <div class="not-footer">
         <div class="footer-container">
             <div class="h2-container">
-                <h2>Let's work together.</h2>
-                <h2 class="border-hover">Get in touch.</h2>
+                <h2 class="hidden1">Let's work together.</h2>
+                <h2 class="border-hover hidden1">Get in touch.</h2>
             </div>
         </div>
     </div>
@@ -201,6 +203,24 @@
             cursor.style.left = e.pageX + 'px';
             cursor.style.top  = e.pageY + 'px'
         })
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                console.log(entry)
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show1');
+                } 
+                // else {
+                //     entry.target.classList.remove('show1')
+                // }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden1');
+        hiddenElements.forEach((el) => observer.observe(el)); 
+
+
+
     </script>
 </body>
 </html>
