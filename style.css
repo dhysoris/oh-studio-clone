@@ -507,28 +507,30 @@ footer {
 
 /* TODO Javascript hover test */
 
-.cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: white;
-    transition: 0.1s;
-    /* transform: translate(-50%, -50%); */
-    pointer-events: none;
-    mix-blend-mode: difference;
-}
-
-/* .main h1:hover{
-    color: white;
-} */
-
-/* .hero-flex-group span:nth-child(1) {
-    color: white;
-} */
-
-.main h1:hover ~ .cursor {
-    transform: scale(20);
+@media (min-width: 600px) {
+    .cursor {
+        position: fixed;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: white;
+        transition: 0.1s;
+        /* transform: translate(-50%, -50%); */
+        pointer-events: none;
+        mix-blend-mode: difference;
+    }
+    
+    /* .main h1:hover{
+        color: white;
+    } */
+    
+    /* .hero-flex-group span:nth-child(1) {
+        color: white;
+    } */
+    
+    .main h1:hover ~ .cursor {
+        transform: scale(20);
+    }
 }
 
 
