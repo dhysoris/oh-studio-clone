@@ -507,7 +507,7 @@ footer {
 
 /* TODO Javascript hover test */
 
-@media (min-width: 600px) {
+@media (min-width: 800px) {
     .cursor {
         position: fixed;
         width: 20px;
