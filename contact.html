@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            font-size: .9rem;
+            font-weight: 500;
+            font-family: sans-serif;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 5;
+        }
+
+        .nav-container {
+            width: 1400px;
+            padding: 30px 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .grey-nav {
+            padding: 23px 8px;
+            border-radius: 2.7rem;
+            /* background: #E8E5E480; */
+            background: linear-gradient(rgba(150, 150, 150, 0.1), rgba(150, 150, 150, 0.1));
+            backdrop-filter: blur(50px);
+            -webkit-backdrop-filter: blur(10px);
+            
+        }
+
+        .nav-container span {
+            cursor: pointer;
+            /* background: white; */
+            font-size: 1.1rem;
+            border-radius: 3rem;
+            padding: 17px 32px;
+        }
+
+        .nav-container .grey-nav a  {
+            text-decoration: none;
+            color: black;
+            
+            cursor: pointer;
+            /* background: white; */
+            font-size: 1.1rem;
+            border-radius: 3rem;
+            padding: 17px 32px;
+            transition: .3s;
+        }
+
+        .nav-container .grey-nav a:focus {
+            background: white;
+        }
+
+        .active {
+            background: white;
+        }
+
+        .filter-noise {
+            background-image: url(https://www.aespa.com/assets/noise-DAvmsmDJ.gif);
+            background-repeat: repeat;
+            overflow-y: hidden;
+            height: 200vh;
+            width: 100%;
+            position: absolute;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="grey-nav">
+                <!-- <span class="span-1" href="https://www.youtube.com/watch?v=f-LQoNN3hIk">Home</span> -->
+                <a href="index.html" class="colorButton" id="button1">Home</a>
+                <a href="profile.html" class="colorButton" id="button2">Profile</a>
+                <a href="contact.html" class="colorButton" id="button3">Contact</a>
+            </div>
+        </div>
+
+        <div class="filter-noise"></div>
+       </nav>
+
+       <script>
+        // Function to set active button
+function setActiveButton() {
+    const activeButtonId = localStorage.getItem('activeButtonId');
+    if (activeButtonId) {
+        const activeButton = document.getElementById(activeButtonId);
+        if (activeButton) {
+            activeButton.classList.add('active');
+        }
+    }
+}
+
+const colorButtons = document.querySelectorAll('.colorButton');
+
+colorButtons.forEach(button => {
+    button.addEventListener('click', function(event) {
+        // Remove 'active' class from all buttons
+        colorButtons.forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // Add 'active' class to the clicked button
+        this.classList.add('active');
+        localStorage.setItem('activeButtonId', this.getAttribute('id'));
+    });
+});
+
+// Set active button on page load
+setActiveButton();
+       </script>
+</body>
+</html>
+</body>
+</html>
