@@ -2,10 +2,12 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
 }
 
 html {
     scroll-behavior: smooth;
+    font-family: "Neue Montreal";
 }
 
 :root {  
@@ -90,7 +92,7 @@ nav {
 /* TODO Hero */ /* TODO Hero */ /* TODO Hero */
 
 .hero-description {
-    font-family: "Fraunces";
+    font-family: "Neue Montreal";
 
     
     display: flex;
