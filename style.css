@@ -517,7 +517,7 @@ footer {
         border-radius: 50%;
         background: white;
         transition: 0.1s;
-        /* transform: translate(-50%, -50%); */
+        transform: translate(-50%, -50%); 
         pointer-events: none;
         mix-blend-mode: difference;
     }
